@@ -38,8 +38,10 @@ pipeline {
         
          stage ("Authenticate to EKS") {
              steps {
-                     sh "aws sts get-caller-identity
+                     sh """
+                     aws sts get-caller-identity
                     aws eks --region $AWS_REGION update-kubeconfig --name $CLUSTER_NAME"
+                    """
                  }
             }
                 
