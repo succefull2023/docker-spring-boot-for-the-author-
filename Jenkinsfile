@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/succefull2023/docker-spring-boot-for-the-author-.git,credentialsId:'github-pat?]])
+                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/succefull2023/docker-spring-boot-for-the-author-.git',credentialsId:'github-pat']])
             }
         }
         
