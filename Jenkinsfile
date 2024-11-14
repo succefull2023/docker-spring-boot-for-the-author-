@@ -41,12 +41,12 @@ pipeline {
         //         }
             }
                 
-        }
-        stage ('Helm Deploy') {
-          steps {
-            script {
-                sh "helm upgrade first --install mychart --namespace helm-deployment --set image.tag=$BUILD_NUMBER"
+        stage ("Helm install") {
+            steps {
+               script{
+                    sh "helm upgrade first --install mychart --namespace helm-deployment --set image.tag=$BUILD_NUMBER"
                 }
             }
-        }
     }
+}
+}
