@@ -41,7 +41,7 @@ pipeline {
              steps {
                      sh """
                      aws sts get-caller-identity
-                    aws eks --region $AWS_REGION update-kubeconfig --name $CLUSTER_NAME"
+                    aws eks --region $AWS_REGION update-kubeconfig --name $CLUSTER_NAME
                     """
                  }
             }
