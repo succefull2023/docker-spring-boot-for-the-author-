@@ -49,7 +49,8 @@ pipeline {
         stage ("Helm install") {
             steps {
                script{
-                    sh "helm upgrade --install mychart ./mychart --set image.repository=827648740654.dkr.ecr.us-east-1.amazonaws.com/my-docker-repo,image.tag=15 --namespace helm-deployment"
+                    sh "helm upgrade --install mychart ./mychart --set image.repository=827648740654.dkr.ecr.us-east-1.amazonaws.com/my-docker-repo,image.tag=sha256:267771600365c30b6f077905efd76f0a1f462765cdaea69fc63539df2950f29c --namespace helm-deployment"
+
 
 
                 }
