@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         registry = "827648740654.dkr.ecr.us-east-1.amazonaws.com/my-docker-repo"
+        CLUSTER_NAME = "demo-eks"
     }
     stages {
         stage('Checkout') {
@@ -33,12 +34,13 @@ pipeline {
                     
                 }
             }
-        // }
+         }
         
-        // stage ("Helm package") {
-        //     steps {
-        //             sh "helm package springboot"
-        //         }
+         stage ("Authenticate to EKS") {
+             steps {
+                     sh "aws sts get-caller-identity
+                    aws eks --region $AWS_REGION update-kubeconfig --name $CLUSTER_NAME"
+                 }
             }
                 
         stage ("Helm install") {
