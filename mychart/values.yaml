@@ -5,11 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: 827648740654.dkr.ecr.us-east-1.amazonaws.com/my-docker-repo:15
+  repository: 827648740654.dkr.ecr.us-east-1.amazonaws.com/my-docker-repo
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
-
+  tag: "15"
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
