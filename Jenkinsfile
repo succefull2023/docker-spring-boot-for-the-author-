@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         registry = "827648740654.dkr.ecr.us-east-1.amazonaws.com/my-docker-repo"
+        AWS_REGION = "us-east-1"
         CLUSTER_NAME = "demo-eks"
     }
     stages {
