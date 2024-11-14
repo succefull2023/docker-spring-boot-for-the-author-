@@ -39,10 +39,16 @@ spec:
               protocol: TCP
           livenessProbe:
             httpGet:
+            initialDelaySeconds: 20
+            timeoutSeconds: 2
+            periodSeconds: 5
               path: /
               port: http
           readinessProbe:
             httpGet:
+            initialDelaySeconds: 10
+            timeoutSeconds: 2
+            periodSeconds: 5
               path: /
               port: http
           resources:
