@@ -49,7 +49,8 @@ pipeline {
         stage ("Helm install") {
             steps {
                script{
-                    sh "helm upgrade --install mychart docker-spring-boot-for-the-author-/mychart --set image.repository=827648740654.dkr.ecr.us-east-1.amazonaws.com/my-docker-repo,image.tag=15 --namespace helm-deployment"
+                    sh "helm upgrade --install mychart ./docker-spring-boot-for-the-author-/mychart --set image.repository=827648740654.dkr.ecr.us-east-1.amazonaws.com/my-docker-repo,image.tag=15 --namespace helm-deployment"
+
                 }
             }
     }
