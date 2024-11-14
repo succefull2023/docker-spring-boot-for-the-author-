@@ -39,9 +39,7 @@ spec:
               protocol: TCP
           livenessProbe:
             httpGet:
-            initialDelaySeconds: 20
-            timeoutSeconds: 2
-            periodSeconds: 5
+            periodSeconds: 
               path: /
               port: http
           readinessProbe:
